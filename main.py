@@ -1,4 +1,4 @@
-import random,time,requests,socket,datetime
+import random,time,requests,socket,datetime,os
 from fake_useragent import UserAgent
 ua = UserAgent()
 
@@ -6,13 +6,12 @@ ua = UserAgent()
 def randomIp():
     classIp = ["a","b","c"]
     ip_standart = [i for i in range(1,254)]
-    # print("ip : ",random.choice(classIp))
     decision = random.choice(classIp)
-    a = 0
+    a = 0#breakpoint
     if(decision == "c"):
         _1,_2,_3 = str(random.choice(ip_standart)),str(random.choice(ip_standart)),str(random.choice(ip_standart))
         endIp = "".join([_1,".",_2,".",_3,".",str(random.choice(ip_standart))])
-        if(endIp == None):
+        if(endIp == None):#check if returning value None
             randomIp()
         return endIp
     elif(decision == "b"):
@@ -46,24 +45,15 @@ def sendReq(mail):
             print("Success")
         else:
             print("Failed")
-# for i in range(100):
-#     print(randomIp())
-# with open("1M_GMAIL_mail_no_pass.txt") as f:
-#     j = 0
-#     for i in f:
-#         j += 1
-#         sendReq(i)
-#         time.sleep(.5)
-#         if(j == 200000):
-#             break
 
-time_est = 0.5 * 200000
+time_est = 0.05 * 100000
 est_time = datetime.datetime.now() + datetime.timedelta(seconds=time_est)
 print(f"Estimasi program selesai: {est_time}")
 
 
 failed_data = []
-with open("1M_GMAIL_mail_no_pass.txt") as f:
+with open("this") as f:#ganti this dengan wordlist email
+    #opsi pertama
     j = 0
     for i in f:
         j += 1
@@ -85,6 +75,8 @@ with open("1M_GMAIL_mail_no_pass.txt") as f:
                 print(f"ada yang error: {e}")
                 failed_data.append(i)
                 break
-        time.sleep(.5)
-        if(j == 200000):
+        if j % 10 == 0:
+            os.system('cls')
+        time.sleep(.05)
+        if j == 100000:
             break
