@@ -80,5 +80,5 @@ kalau udah ketemu tinggal :
 <br />
 
 ```
-tail -f output.log
+kill [ID proses]
 ```
