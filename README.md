@@ -1,5 +1,5 @@
 # Install Module
-Install dulu requirmentnya
+
 ```
 pip install -r requirements.txt
 ```
