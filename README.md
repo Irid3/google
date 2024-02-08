@@ -20,7 +20,7 @@ Program akan berhenti kalau terminal diclose.
 <br />
 
 ---
-Kalau ingin program berjalan di background :
+Run in background :
 ---
 
 <br />
@@ -66,8 +66,8 @@ Stop-Process -Id (Get-Process -Name "python" | Select-Object -ExpandProperty Id)
 
 ## Linux
 <br />
-cek dulu pid pythonnya berapa :
 
+check pid
 <br />
 
 ```
@@ -75,8 +75,7 @@ ps aux | grep python
 ```
 <br />
 
-kalau udah ketemu tinggal :
-
+and kill it
 <br />
 
 ```
